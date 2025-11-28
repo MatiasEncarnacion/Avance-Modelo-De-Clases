@@ -1,6 +1,9 @@
 public class Switch extends Componente {
     private boolean estado;
 
+    public Switch() {
+
+    }
 
     public Switch(boolean estado) {
         super();

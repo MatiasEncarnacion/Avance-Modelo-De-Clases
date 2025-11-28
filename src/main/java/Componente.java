@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Componente {
+public abstract class Componente {
     private float voltaje;
     private float corriente;
     private int resistencia;
@@ -23,6 +23,52 @@ public class Componente {
         this.corriente = corriente;
         this.potencia = potencia;
         this.medida = medida;
+    }
+
+    public void calcularVoltaje(float corriente, int resistencia) {
+        float voltaje = corriente*resistencia;
+        this.voltaje = voltaje;
+    }
+
+    public void calcularCorriente(float voltaje, int resistencia) {
+        float corriente = 0;
+        try {
+            corriente = voltaje / resistencia;
+
+        } catch (ArithmeticException e) {
+            System.out.println("Resistencia no puede ser igual a 0, "+e.getMessage());
+        }
+        this.corriente = corriente;
+    }
+
+    public void calcularResistencia(float corriente, float voltaje){
+        int resistencia = 0;
+        try{
+            resistencia = (int) (voltaje/corriente);
+        } catch (ArithmeticException e) {
+            System.out.println("Corriente no puede ser igual a 0, "+e.getMessage());
+        }
+        this.resistencia = resistencia;
+    }
+
+    public void calcularPotencia(float voltaje, float corriente){
+        float potencia = voltaje*corriente;
+        this.potencia = potencia;
+    }
+
+    public void calcularPotencia(double corriente, int resistencia){
+        float potencia = (float)Math.sqrt(corriente)*resistencia;
+        this.potencia = potencia;
+    }
+
+    public void calcularPotencia(double voltaje, float resistencia){
+        float potencia = 0;
+        try {
+            potencia = (float)Math.sqrt(voltaje)/resistencia;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Resistencia no puede ser igual a 0, "+e.getMessage());
+        }
+        this.potencia = potencia;
     }
 
     public float getVoltaje() {

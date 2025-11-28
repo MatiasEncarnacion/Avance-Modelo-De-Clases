@@ -1,23 +1,41 @@
 public class Capacitor extends Componente{
-    private int reactanciaCapacitiva;
+    private float capacitancia;
+    private float cargaElectrica;
 
+    public Capacitor(){
+
+    }
     public Capacitor(float voltaje, float corriente, float potencia, TipoMedida medida, int reactanciaCapacitiva) {
-        super(voltaje, corriente, potencia, TipoMedida.volt);
-        this.reactanciaCapacitiva = reactanciaCapacitiva;
+        super(voltaje, corriente, potencia, TipoMedida.farads);
+        this.capacitancia = reactanciaCapacitiva;
     }
 
-    public int getReactanciaCapacitiva() {
-        return reactanciaCapacitiva;
+    public void calcularCargaElectrica(float capacitancia, float voltaje){
+        float cargaElectrica = capacitancia * voltaje;
+        this.cargaElectrica = cargaElectrica;
     }
 
-    public void setReactanciaCapacitiva(int reactanciaCapacitiva) {
-        this.reactanciaCapacitiva = reactanciaCapacitiva;
+    public float getCapacitancia() {
+        return capacitancia;
+    }
+
+    public void setCapacitancia(float capacitancia) {
+        this.capacitancia = capacitancia;
+    }
+
+    public float getCargaElectrica() {
+        return cargaElectrica;
+    }
+
+    public void setCargaElectrica(float cargaElectrica) {
+        this.cargaElectrica = cargaElectrica;
     }
 
     @Override
     public String toString() {
-        return "Capacitor{" + super.toString()+", "+
-                "reactanciaCapacitiva=" + reactanciaCapacitiva +
+        return "Capacitor{"+
+                "capacitancia = " + capacitancia +
+                ", carga electrica = " + cargaElectrica+
                 '}';
     }
 }
