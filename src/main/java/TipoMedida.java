@@ -1,3 +1,3 @@
 public enum TipoMedida {
-    ohm, volt, ampere, henry, watt, farads
+    OHM, VOLT, AMPERE, HENRY, WATT, FARADS
 }

@@ -3,11 +3,11 @@ public class Resistencia extends Componente {
 
     public Resistencia(){
         nResistencia++;
-        this.setMedida(TipoMedida.ohm);
+        this.setMedida(TipoMedida.OHM);
     }
 
     public Resistencia(float voltaje, float corriente, int resistencia, float potencia, TipoMedida medida) {
-        super(voltaje, corriente, resistencia, potencia, TipoMedida.ohm);
+        super(voltaje, corriente, resistencia, potencia, TipoMedida.OHM);
         nResistencia++;
     }
 

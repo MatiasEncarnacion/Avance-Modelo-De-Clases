@@ -6,7 +6,7 @@ public class Capacitor extends Componente{
 
     }
     public Capacitor(float voltaje, float corriente, float potencia, TipoMedida medida, int reactanciaCapacitiva) {
-        super(voltaje, corriente, potencia, TipoMedida.farads);
+        super(voltaje, corriente, potencia, TipoMedida.FARADS);
         this.capacitancia = reactanciaCapacitiva;
     }
 
